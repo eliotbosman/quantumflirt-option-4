@@ -1,0 +1,216 @@
+video {
+    max-width: 100%; max-height: 100%;
+}
+
+.feature {
+    margin: 10vw; 
+}
+
+#title { font-size: 24pt;}
+
+nav {display: grid; grid-template-columns: 0.05fr 0.9fr; position: sticky; top: 10px; text-align: center; font-size: 16pt; z-index: 2; }
+#openOverlayButton{align-items: baseline;}
+a {
+    text-decoration: none; color: black; cursor: pointer;
+}
+
+#archiveList {
+    list-style: none;
+    padding: 0;
+    margin: 6vw; 
+    cursor: pointer;
+}
+
+#archiveList video {
+    max-width: 50%;
+}
+
+.archive-list {
+    list-style: none;
+    padding: 0;
+    margin: 4vw;
+    cursor: pointer;
+    width: 80vw; /* Maximum width for the entire list */
+}
+
+.toggle-button {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10rem; /* Adjust the gap as needed */
+    padding: 1rem; /* Add padding for spacing */
+    border: 1px solid #ddd; /* Optional: Add a border for visual separation */
+}
+
+.title-column, .year-column, .client-column {
+    /* Styles for each column */
+    text-align: left; /* Center the text in each column */
+}
+
+/* Optional: Add hover effect for better visual feedback */
+.toggle-button:hover {
+    background-color: #f0f0f0;
+}
+
+#archiveList button {
+    font-family: 'ABC Helveesti Edu'; border: none; background: none; font-size: 20pt;
+    border-bottom: 6px solid black;
+}
+
+.archive-video {
+    display: none;
+    margin-top: 2vh;
+}
+
+.active {
+    display: grid;
+}
+
+/* Style for the collapsed state */
+.archive-list.collapsed .toggle-button {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem; border: 1px solid #ddd;
+}
+
+/* Optional: Add hover effect for the collapsed state */
+.archive-list.collapsed .toggle-button:hover {
+    background-color: #f0f0f0;
+}
+
+.overlay a {
+    color: white;
+}
+
+#featurefig, h1 {
+    font-size: 55pt;
+}
+
+h1 {
+    margin: 2vw;
+}
+
+body {
+    font-family: 'ABC Helveesti Edu'; background: #fef8e6; margin: 0; overflow-x: hidden;
+}
+
+article {
+    position: relative; top: 10vh;
+    line-height: 100pt;
+    margin-bottom: -50vh;
+    font-size: 82pt;
+    width: 100vw;
+    height: 100vh;
+    margin-left: 10vw; margin-right: 4vw;
+}
+
+ol {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; list-style-type: none; grid-gap: 2vw; margin-right: 2vw;;
+}
+
+nav {
+    font-size: 50pt;
+    position: sticky; top: 0px;
+}
+
+footer {
+    text-align: center; margin-top: 1vh; margin-bottom: 1vh;
+}
+
+.info-article {
+    text-align: left; text-align-last: left; hyphenate-limit-chars: 8;
+}
+
+.contact-article {
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+.info-article, .contact-article {
+    display: grid; grid-template-columns: 1fr 1fr; margin-left: 2vw; margin-right: 2vw;
+    font-size: 25pt; grid-gap: 4vw; 
+}
+
+#fullscreenOverlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1000;
+}
+
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: black; /* Adjust the background color and opacity as needed */
+    color: white; /* Adjust the text color */
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    transition: all 0.8s;
+}
+
+#openOverlayButton, #closeOverlayButton {
+    border: none; background: none; font-family: 'ABC Helveesti Edu'; font-size: 18pt;
+    position: sticky; top: 1vh; 
+
+}
+
+#closeOverlayButton {
+    color: white;
+}
+
+#openOverlayButton {
+    margin-top: -2.25vh; margin-left: 0.5vw;
+}
+
+.grid::-webkit-scrollbar {
+    display: none;
+}
+
+.grid {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.gallery-container {
+    padding: 10vh;
+    width: 80vw;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin-right: 1vw; /* Adjust as needed for spacing between videos */
+    margin-top: -15vh;
+}
+
+
+@media screen and (max-width: 440px) {
+    ol { display: none; } 
+}
+
+  
+
+@font-face {
+    font-family: 'ABC Helveesti Edu';
+    src: url('ABCHelveesti-Medium.woff2') format('woff2'),
+        url('ABCHelveesti-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
