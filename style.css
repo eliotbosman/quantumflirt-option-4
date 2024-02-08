@@ -6,6 +6,8 @@ video {
     margin: 10vw; 
 }
 
+body::-webkit-scrollbar {display: none;}
+
 #title { font-size: 24pt;}
 
 nav {display: grid; grid-template-columns: 0.05fr 0.9fr; position: sticky; top: 10px; text-align: center; font-size: 16pt; z-index: 2; }
@@ -19,6 +21,7 @@ a {
     padding: 0;
     margin: 6vw; 
     cursor: pointer;
+    display: none; 
 }
 
 #archiveList video {
@@ -80,6 +83,9 @@ a {
     color: white;
 }
 
+#overlay::-webkit-scrollbar {display: none;}
+
+
 #featurefig, h1 {
     font-size: 55pt;
 }
@@ -90,12 +96,14 @@ h1 {
 
 body {
     font-family: 'ABC Helveesti Edu'; background: #fef8e6; margin: 0; overflow-x: hidden;
+    transition: background-color 0.1s ease 0.1s; /* Transition with a delay of 0.5s */
+
 }
 
 article {
     position: relative; top: 10vh;
     line-height: 100pt;
-    margin-bottom: -50vh;
+    margin-bottom: -35vh;
     font-size: 82pt;
     width: 100vw;
     height: 100vh;
@@ -191,9 +199,47 @@ footer {
 }
 
 
-@media screen and (max-width: 440px) {
-    ol { display: none; } 
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    /* Example adjustments */
+    body { overflow-x: hidden;}
+    ol {grid-template-columns: 1fr;}
+    #title { font-size: 18pt; }
+    nav { display: block; font-size: 12pt; border-bottom: 3px solid black; background: inherit; padding: 2px; }
+    nav button {text-decoration:}
+    nav a {grid-column: 1/1;  text-align: center; font-size: 32pt;}
+    article {font-size: 32pt; line-height: 1.5ch; height: 105vh; margin-top: -6vh; width: 80vw; }
+    footer {font-size: 9pt;}
+    video { margin: 0;}
+    .feature { margin: 5vw; }
+    .archive-list { display: none; margin: 3vw; }
+    .info h1, .contact h1 {font-size: 32pt;}
+    .info-article, .contact-article {display: block; font-size: 12pt;}
+    .contact-article p {text-align: left;}
+    .contact-article img {max-width: 100%;}
+    #overlay {overflow-x: hidden;}
+    #overlay::-webkit-scrollbar {display: none;}
+    #closeOverlayButton {width: 100vw; margin-left: -4.5vw; text-align: center; background: inherit; border-bottom: white 3px solid; top: -2.5vh; margin-top: 0; padding-top: 12px; transition: ease 0.12s;}
+    .gallery-container {
+        padding: 5vh;
+        width: 80vw;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        margin-right: 1vw;
+        margin-top: -4vh;
+
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust column width as needed */
+        gap: 0rem; /* Adjust gap as needed */
+        overflow: hidden;
+        scroll-behavior: smooth; /* Add smooth scrolling */
+    }
+    /* Add more responsive styles as needed */
 }
+
 
   
 
